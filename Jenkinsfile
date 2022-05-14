@@ -2,14 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('build') {
+        stage("build") {
             steps {
-                sh "docker build -t olaunicamp ."
+                sh """"
+                    docker build -t olaunicamp .
+                """
             }
         }
-        stage('run') {
+        stage("run") {
             steps {
-                sh "docker run --rm olaunicamp"
+                sh """"
+                    docker run --rm olaunicamp
+                """
             }
         }
     }
